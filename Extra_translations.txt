@@ -1,0 +1,25 @@
+//cust_plan(cid(customer,cdda),cid(dataPlan,cdda)) :: CDF Classes.
+'cust_plan'('customer','dataPlan') :: 'CDF Classes'.
+
+
+//cust_plan(cid(customer,cdda),cid(dataPlan,cdda))[hasCustomerLogin *=> loginInfo].
+'cust_plan'('customer','dataPlan')['hasCustomerLogin' *=> 'loginInfo'].
+
+//cust_plan(cid(customer,cdda),cid(dataPlan,cdda))[hasCustomerLogin *=> loginInfo].
+'cust_plan'('customer','dataPlan')['hasCustomerLogin' *=> 'loginInfo'].
+
+//cust_plan(cid(customer,cdda),cid(dataPlan,cdda))[hasCustomerLogin {1 : 1} *=> loginInfo ] 
+'cust_plan'('customer','dataPlan')['hasCustomerLogin' {1 : 1} *=> 'loginInfo' ].
+
+//cust_plan(oid(customerX,cdda),oid(dataPlanX,cdda)) : cust_plan(cid(customer,cdda),cid(dataPlan,cdda)).
+'cust_plan'('customerX','dataPlanX') : 'cust_plan'('customer','dataPlan').
+
+//cust_plan(oid(customerX,cdda),oid(dataPlanX,cdda))[hasCustomerLogin -> loginInfoY].
+'cust_plan'('customerX','dataPlanX')['hasCustomerLogin' -> 'loginInfoY'].
+
+//cust_plan(oid(customerX,cdda),oid(dataPlanX,cdda))[hasCustomerLogin -> loginInfoY].
+cust_plan(customerX,dataPlanX)[hasCustomerLogin -> loginInfoY].
+
+
+
+

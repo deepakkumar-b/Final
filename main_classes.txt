@@ -1,0 +1,186 @@
+'cellPhone' :: 'CDF Classes'.
+'smartPhone' :: 'cellPhone'.
+'samGalaxy' :: 'smartPhone'.
+'samGalaxyS2' :: 'samGalaxy'.
+'samGalaxyS3' :: 'samGalaxy'.
+'iPhone' :: 'smartPhone'.
+'iPhone3G' :: 'iPhone'.
+'iPhone3GS' :: 'iPhone'.
+'iPhone4G' :: 'iPhone'.
+'iPhone4GS' :: 'iPhone'.
+'iPhone5G' :: 'iPhone'.
+'cellOperatingSystem' :: 'CDF Classes'.
+'android' :: 'cellOperatingSystem'.
+'iOS' :: 'cellOperatingSystem'.
+'cellVendor' :: 'allAtoms'.
+'cellVersion' :: 'allAtoms'.
+'cellIMEINo' :: 'allAtoms'.
+'lastUpdateDate' :: 'allAtoms'.
+'lastUpdateTime' :: 'allAtoms'.
+'connection' :: 'CDF Classes'.
+'wifiConnection' :: 'connection'.
+'cellularConnection' :: 'connection'.
+'connectionSpeed' :: 'allIntegers'.
+'connectionFlag' :: 'allIntegers'.
+'connectionName' :: 'allAtoms'.
+'company' :: 'CDF Classes'.
+'carrierCo' :: 'company'.
+'homeCountry' :: 'allAtoms'.
+'range' :: 'allIntegers'.
+'frequency' :: 'allIntegers'.
+'application' :: 'CDF Classes'.
+'emailClient' :: 'application'.
+'defaultEmailClient' :: 'emailClient'.
+'gmailApp' :: 'emailClient'.
+'yahooMApp' :: 'emailClient'.
+'carrierClientApplication' :: 'application'.
+'attClientApp' :: 'carrierClientApplication'.
+'verizonClientApp' :: 'carrierClientApplication'.
+'tmobileClientApp' :: 'carrierClientApplication'.
+'sprintClientApp' :: 'carrierClientApplication'.
+'lastTimeUsed' :: 'allAtoms'.
+'lastDateUsed' :: 'allAtoms'.
+'initTime' :: 'allAtoms'.
+'initDate' :: 'allAtoms'.
+'periveledgeLevel' :: 'allIntegers'.
+'lastTimeConnected' :: 'allAtoms'.
+'lastDateConnected' :: 'allAtoms'.
+'applicationConfig' :: 'CDF Classes'.
+'emailClientConfig' :: 'applicationConfig'.
+'isConfigFlag' :: 'allIntegers'.
+'portNo' :: 'CDF Classes'.
+'incomingPort' :: 'allIntegers'.
+'outgoingPort' :: 'allIntegers'.
+'serviceProvider' :: 'CDF Classes'.
+'serviceType' :: 'CDF Classes'.
+'domainName' :: 'allAtoms'.
+'exchangeServer' :: 'CDF Classes'.
+'numberOfConcurrentConnection' :: 'allIntegers'.
+'serverSetting' :: 'allAtoms'.
+'serverConfig' :: 'allAtoms'.
+'person' :: 'CDF Classes'.
+'customer' :: 'person'.
+'nameID' :: 'CDF Classes'.
+'firstName' :: 'allAtoms'.
+'middleName' :: 'allAtoms'.
+'lastName' :: 'allAtoms'.
+'address' :: 'CDF Classes'.
+'zip' :: 'allIntegers'.
+'country' :: 'allAtoms'.
+'emailContact' :: 'allAtoms'.
+'phoneContact' :: 'allAtoms'.
+'dataPlan' :: 'CDF Classes'.
+'loginInfo' :: 'CDF Classes'.
+'loginId' :: 'allAtoms'.
+'password' :: 'allAtoms'.
+'phoneNumber' :: 'CDF Classes'.
+'phoneLocalCode' :: 'allIntegers'.
+'phoneStateCode' :: 'allIntegers'.
+'phoneCountryCode' :: 'allIntegers'.
+'internationalRoamingFlag' :: 'allIntegers'.
+'activatedFlag' :: 'allIntegers'.
+'callMinutesLeft' :: 'allIntegers'.
+'dataAmountLeft' :: 'allIntegers'.
+'totalCharge' :: 'CDF Classes'.
+'callCharge' :: 'allIntegers'.
+'textCharge' :: 'allIntegers'.
+'dataCharge' :: 'allIntegers'.
+'cust_plan(cid(customer,cdda),cid(dataPlan,cdda))' :: 'CDF Classes'.
+
+'smartPhone'['hasOS' *=> 'cellOperatingSystem'].
+'smartPhone'['hasVendor' *=> 'cellVendor'].
+'cellOperatingSystem'['hasVersion' *=> 'cellVersion'].
+'smartPhone'['hasIMEINo' *=> 'cellIMEINo'].
+'cellOperatingSystem'['hasLastUpdateDate' *=> 'lastUpdateDate'].
+'cellOperatingSystem'['hasLastUpdateTime' *=> 'lastUpdateTime'].
+'connection'['hasConnectionFlag' *=> 'connectionFlag'].
+'wifiConnection'['hasConnectionName' *=> 'connectionName'].
+'carrierCo'['hasHomeCountry' *=> 'homeCountry'].
+'carrierCo'['hasRange' *=> 'range'].
+'carrierCo'['hasFrequency' *=> 'frequency'].
+'application'['hasLastTimeUsed' *=> 'lastTimeUsed'].
+'application'['hasLastDateUsed' *=> 'lastDateUsed'].
+'application'['hasInitTime' *=> 'initTime'].
+'application'['hasInitDate' *=> 'initDate'].
+'application'['hasPeriveledgeLevel' *=> 'periveledgeLevel'].
+'emailClient'['hasLastTimeConnected' *=> 'lastTimeConnected'].
+'emailClient'['hasLastDateConnected' *=> 'lastDateConnected'].
+'applicationConfig'['hasConfigFlag' *=> 'isConfigFlag'].
+'emailClient'['hasEmailClientConfi' *=> 'emailClientConfig'].
+'portNo'['hasIncomingPort' *=> 'incomingPort'].
+'portNo'['hasOutgoingPort' *=> 'outgoingPort'].
+'emailClientConfig'['hasPortConfig' *=> 'portNo'].
+'emailClientConfig'['hasEmailLogin' *=> 'loginInfo'].
+'emailClientConfig'['hasServiceProvider' *=> 'serviceProvider'].
+'emailClientConfig'['hasDomainName' *=> 'domainName'].
+'emailClientConfig'['hasExchangeServer' *=> 'exchangeServer'].
+'emailClientConfig'['hasNumberOfConcurrentConnection' *=> 'numberOfConcurrentConnection'].
+'emailClientConfig'['hasServerSetting' *=> 'serverSetting'].
+'emailClientConfig'['hasServerConfig' *=> 'serverConfig'].
+'nameID'['hasFirstName' *=> 'firstName'].
+'nameID'['hasLastName' *=> 'lastName'].
+'person'['hasNameID' *=> 'nameID'].
+'address'['hasZIP' *=> 'zip'].
+'address'['hasCountry' *=> 'country'].
+'person'['hasAddress' *=> 'address'].
+'customer'['hasEmailContact' *=> 'emailContact'].
+'customer'['hasPhoneContact' *=> 'phoneContact'].
+'loginInfo'['hasLoginIdAttr' *=> 'loginId'].
+'loginInfo'['hasPasswordAttr' *=> 'password'].
+'dataPlan'['hasLoginInfo' *=> 'loginInfo'].
+'phoneNumber'['hasLocalCodeAttr' *=> 'phoneLocalCode'].
+'phoneNumber'['hasStateCodeAttr' *=> 'phoneStateCode'].
+'phoneNumber'['hasCountryCodeAttr' *=> 'phoneCountryCode'].
+'dataPlan'['hasPhoneNumber' *=> 'phoneNumber'].
+'dataPlan'['hasInternationalRoamingFlag' *=> 'internationalRoamingFlag'].
+'dataPlan'['hasActivatedFlag' *=> 'activatedFlag'].
+'dataPlan'['hasCallMinutesLeft' *=> 'callMinutesLeft'].
+'dataPlan'['hasDataAmountLeft' *=> 'dataAmountLeft'].
+'totalCharge'['hasCallChargeAttr' *=> 'callCharge'].
+'totalCharge'['hasTextChargeAttr' *=> 'textCharge'].
+'totalCharge'['hasDataChargeAttr' *=> 'dataCharge'].
+'dataPlan'['hasTotalCharge' *=> 'totalCharge'].
+'cust_plan(cid(customer,cdda),cid(dataPlan,cdda))'['hasCustomerLogin' *=> 'loginInfo'].
+
+'smartPhone'['hasOS' {1 : 1} *=> 'cellOperatingSystem' ]. 
+'smartPhone'['hasVendor' {1 : 1} *=> 'cellVendor' ]. 
+'cellOperatingSystem'['hasVersion' {1 : 1} *=> 'cellVersion' ]. 
+'smartPhone'['hasIMEINo' {1 : 1} *=> 'cellIMEINo' ]. 
+'cellOperatingSystem'['hasLastUpdateDate' {1 : 1} *=> 'lastUpdateDate' ]. 
+'cellOperatingSystem'['hasLastUpdateTime' {1 : 1} *=> 'lastUpdateTime' ]. 
+'connection'['hasConnectionFlag' {1 : 1} *=> 'connectionFlag' ]. 
+'wifiConnection'['hasConnectionName' {1 : 1} *=> 'connectionName' ]. 
+'carrierCo'['hasHomeCountry' {1 : 1} *=> 'homeCountry' ]. 
+'carrierCo'['hasRange' {1 : 1} *=> 'range' ]. 
+'carrierCo'['hasFrequency' {1 : 1} *=> 'frequency' ]. 
+'application'['hasLastTimeUsed' {1 : 1} *=> 'lastTimeUsed' ]. 
+'application'['hasLastDateUsed' {1 : 1} *=> 'lastDateUsed' ]. 
+'application'['hasInitTime' {1 : 1} *=> 'initTime' ]. 
+'application'['hasInitDate' {1 : 1} *=> 'initDate' ]. 
+'application'['hasPeriveledgeLevel' {1 : 1} *=> 'periveledgeLevel' ]. 
+'emailClient'['hasLastTimeConnected' {1 : 1} *=> 'lastTimeConnected' ]. 
+'emailClient'['hasLastDateConnected' {1 : 1} *=> 'lastDateConnected' ]. 
+'applicationConfig'['hasConfigFlag' {1 : 1} *=> 'isConfigFlag' ]. 
+'emailClient'['hasEmailClientConfi' {1 : 1} *=> 'emailClientConfig' ]. 
+'portNo'['hasIncomingPort' {1 : 1} *=> 'incomingPort' ]. 
+'portNo'['hasOutgoingPort' {1 : 1} *=> 'outgoingPort' ]. 
+'emailClientConfig'['hasPortConfig' {1 : 1} *=> 'portNo' ]. 
+'emailClientConfig'['hasEmailLogin' {1 : 1} *=> 'loginInfo' ]. 
+'emailClientConfig'['hasServiceProvider' {1 : 1} *=> 'serviceProvider' ]. 
+'emailClientConfig'['hasDomainName' {1 : 1} *=> 'domainName' ]. 
+'emailClientConfig'['hasExchangeServer' {1 : 1} *=> 'exchangeServer' ]. 
+'emailClientConfig'['hasNumberOfConcurrentConnection' {1 : 1} *=> 'numberOfConcurrentConnection' ]. 
+'emailClientConfig'['hasServerSetting' {1 : 1} *=> 'serverSetting' ]. 
+'emailClientConfig'['hasServerConfig' {1 : 1} *=> 'serverConfig' ]. 
+'person'['hasNameID' {1 : 1} *=> 'nameID' ]. 
+'person'['hasAddress' {1 : 1} *=> 'address' ]. 
+'customer'['hasEmailContact' {1 : 1} *=> 'emailContact' ]. 
+'customer'['hasPhoneContact' {1 : 1} *=> 'phoneContact' ]. 
+'dataPlan'['hasLoginInfo' {1 : 1} *=> 'loginInfo' ]. 
+'dataPlan'['hasInternationalRoamingFlag' {1 : 1} *=> 'internationalRoamingFlag' ]. 
+'dataPlan'['hasActivatedFlag' {1 : 1} *=> 'activatedFlag' ]. 
+'dataPlan'['hasCallMinutesLeft' {1 : 1} *=> 'callMinutesLeft' ]. 
+'dataPlan'['hasDataAmountLeft' {1 : 1} *=> 'dataAmountLeft' ]. 
+'dataPlan'['hasTotalCharge' {1 : 1} *=> 'totalCharge' ]. 
+'cust_plan(cid(customer,cdda),cid(dataPlan,cdda))'['hasCustomerLogin' {1 : 1} *=> 'loginInfo' ]. 
+

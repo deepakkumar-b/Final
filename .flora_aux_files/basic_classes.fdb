@@ -1,0 +1,39 @@
+#include "flrheader.flh"
+
+FLORA_THIS_WORKSPACE(sub)(' problem','CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' numberOfOccurences',allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' summary',allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' desc',allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' timestamp',allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' pt_problem',problem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' int_problem',pt_problem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' float_problem',pt_problem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(sub)(' atom_problem',pt_problem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasNumberOfOccurences,numberOfOccurences,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasNumberOfOccurences,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasSummary,summary,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasSummary,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasSummary,summary,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasSummary,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasDesc,desc,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasDesc,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasDesc,desc,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasDesc,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasTimestamp,timestamp,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasTimestamp,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasTimestamp,timestamp,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasTimestamp,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasNumberOfOccurences,numberOfOccurences,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasNumberOfOccurences,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasSummary,summary,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasSummary,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasSummary,summary,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasSummary,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasDesc,desc,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasDesc,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasDesc,desc,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasDesc,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(problem,hasTimestamp,timestamp,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(problem,hasTimestamp,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+FLORA_THIS_WORKSPACE(imvdsig)(solution,hasTimestamp,timestamp,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+FLORA_THIS_WORKSPACE(imvdcondef)(solution,hasTimestamp,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).

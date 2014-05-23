@@ -1,0 +1,21 @@
+#include "flrheader.flh"
+#include "flr_fld_standardtypes.flh"
+
+FLORA_THIS_WORKSPACE(imvdsig)(__fldnewvar1,hasTimestamp,__fldnewvar2,__fldnewvar3).
+FLORA_THIS_WORKSPACE(imvdsig)(__fldnewvar1,hasDesc,__fldnewvar2,__fldnewvar3).
+FLORA_THIS_WORKSPACE(imvdsig)(__fldnewvar1,hasSummary,__fldnewvar2,__fldnewvar3).
+FLORA_THIS_WORKSPACE(imvdsig)(__fldnewvar1,hasNumberOfOccurences,__fldnewvar2,__fldnewvar3).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,pt_problem,__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,allAtoms,__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,problem,__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,'CDF Classes',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' summary',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' float_problem',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' timestamp',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' pt_problem',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' numberOfOccurences',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,allIntegers,__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' desc',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' int_problem',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' atom_problem',__fldnewvar2).
+FLORA_THIS_WORKSPACE(sub)(__fldnewvar1,' problem',__fldnewvar2).

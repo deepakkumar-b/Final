@@ -1,0 +1,26 @@
+ ' problem' :: 'CDF Classes'.
+ ' numberOfOccurences' :: 'allIntegers'.
+ ' summary' :: 'allAtoms'.
+ ' desc' :: 'allAtoms'.
+ ' timestamp' :: 'allIntegers'.
+ ' pt_problem' :: 'problem'.
+ ' int_problem' :: 'pt_problem'.
+ ' float_problem' :: 'pt_problem'.
+ ' atom_problem' :: 'pt_problem'.
+
+'problem'['hasNumberOfOccurences' *=> 'numberOfOccurences'].
+'problem'['hasSummary' *=> 'summary'].
+'solution'['hasSummary' *=> 'summary'].
+'problem'['hasDesc' *=> 'desc'].
+'solution'['hasDesc' *=> 'desc'].
+'problem'['hasTimestamp' *=> 'timestamp'].
+'solution'['hasTimestamp' *=> 'timestamp'].
+
+'problem'['hasNumberOfOccurences' {1 : 1} *=> 'numberOfOccurences' ]. 
+'problem'['hasSummary' {1 : 1} *=> 'summary' ]. 
+'solution'['hasSummary' {1 : 1} *=> 'summary' ]. 
+'problem'['hasDesc' {1 : 1} *=> 'desc' ]. 
+'solution'['hasDesc' {1 : 1} *=> 'desc' ]. 
+'problem'['hasTimestamp' {1 : 1} *=> 'timestamp' ]. 
+'solution'['hasTimestamp' {1 : 1} *=> 'timestamp' ]. 
+

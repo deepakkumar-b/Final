@@ -1,0 +1,23 @@
+flora_symbol(hasTimestamp,0,'_@',122,16,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(pt_problem,0,'_@',59,7,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(allAtoms,0,'_@',31,3,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(desc,0,'_@',108,14,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(problem,0,'_@',52,6,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(hasNumberOfOccurences,0,'_@',77,11,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol('CDF Classes',0,'_@',17,1,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(timestamp,0,'_@',126,16,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(solution,0,'_@',93,13,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(summary,0,'_@',90,12,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' summary',0,'_@',27,3,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' float_problem',0,'_@',62,8,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' timestamp',0,'_@',41,5,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' pt_problem',0,'_@',48,6,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' numberOfOccurences',0,'_@',20,2,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(allIntegers,0,'_@',24,2,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' desc',0,'_@',34,4,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(numberOfOccurences,0,'_@',81,11,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(hasSummary,0,'_@',86,12,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' int_problem',0,'_@',55,7,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(hasDesc,0,'_@',104,14,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' atom_problem',0,'_@',69,9,function_symbol,nontransactional_symbol,'basic_classes.flr').
+flora_symbol(' problem',0,'_@',13,1,function_symbol,nontransactional_symbol,'basic_classes.flr').

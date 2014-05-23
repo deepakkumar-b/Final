@@ -1,0 +1,444 @@
+/************************************************************************
+  file: includes/flrheader.flh
+
+  Author(s): Guizhen Yang
+	     Michael Kifer
+
+  Copyright (C) by
+       The Research Foundation of the State University of New York, 1999-2013.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+
+  This file is automatically included by the FLORA-2 compiler.
+************************************************************************/
+
+
+/************************************************************************
+  Note: This file should contain Macros only!
+
+  If FLORA_DUMP is defined: preprocessing for user-friendly output.
+
+  If any of these macros are changed, the corresponding wrappers in
+  flrwrapper.P must also be changed
+************************************************************************/
+
+
+
+
+/* File:      flora_prefix.flh -- FLORA-2 prefixes
+**
+** Author(s): Michael Kifer
+**	      Guizhen Yang
+**
+** Contact:   flora-users@lists.sourceforge.net
+**
+** Copyright (C) by
+**      The Research Foundation of the State University of New York, 1999-2013;
+**      and Vulcan, Inc., 2008-2013.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**      http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+**
+**
+*/
+
+
+/******************************************************************************
+  Flora prefix
+
+  All Flora symbols begin with this prefix.
+******************************************************************************/
+/* for F-logic and HiLog predicates */
+
+
+
+/******************************************************************************
+  Attaching FLORA_PREFIX
+
+  The argument to this Macro should be quoted.
+******************************************************************************/
+
+
+
+/******************************************************************************
+  Strings following FLORA_PREFIX
+
+  These strings should be quoted.
+******************************************************************************/
+/* Keep "mod" in the name of a formula wrapper right after FLORA_PREFIX
+   We rely on this to identify meta wrappers */
+
+
+
+/*  Trie for keeping skeletons of defined facts -- debugging */
+
+
+/*  Trie for storing used symbols names */
+
+
+
+
+/******************************************************************************
+  Module and trie prefixes
+******************************************************************************/
+/* prefix to construct Flora module predicates. */
+
+
+/*  prefix to name Flora storage trie for a module. */
+
+
+
+/* prefix to name Flora fld storage trie for a module. */
+
+
+/* prefix to name Flora fls storage trie for a module. */
+
+
+
+/****************************************************************************
+  F-logic atom prefixes for predicates that are used to distinguish F-logic
+  wrappers in the trailers, the user program, base facts, etc.
+****************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+  Lengths of prefixes of F-logic wrappers
+******************************************************************************/
+
+
+
+/****************************************************************************
+  Prefixes that are used for F-logic wrappers in rule bodies of user programs.
+  They are called "debuggin prefixes" because they were introduced to help
+  implement the debugging feature that catches undefined methods.
+  Note:
+     naf^, dyna^, dynz^ are the outermost prefixes
+     neg^ is the next outermost
+****************************************************************************/
+
+
+
+
+
+
+
+
+/* Prefixes used for checking undefinedness */
+
+
+
+/* Corresponding 1-arg macros */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* these are used in inheritance closure axioms *******/
+
+
+
+
+
+
+
+
+
+/******* these are for transactions in LIBMOD *******/
+
+
+
+
+
+
+
+/******************************************************************************
+  Lengths of prefixes that are used in the wrappers to the left of module name
+
+  Note: We need to remember that these prefixes are enclosed in quotes.
+        But we need the actual atom length that Prolog uses. So, we deduct 2.
+******************************************************************************/
+
+
+
+/* length of FLORA_PREFIX'FLORA_MODULE_TAG */
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% support for undefinedness checks
+
+
+%% used for generating new oids statically
+%% We had previously #1'FLORA_COMPILATION_ID', but this caused gpp error in
+%% _dump(file). Apparently a gpp bug. So changed to X'FLORA_COMPILATION_ID'
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************************
+  file: includes/flr_fld_standardtypes.flh
+
+  Author(s): Michael Kifer
+
+  Copyright (C) by
+       The Research Foundation of the State University of New York, 1999-2013.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+
+  This file is automatically included by the FLORA-2 compiler in every FLD file.
+  This file is for comands that are to be executed once per module.
+
+  Makes the builtin classes _integer, _decimal, etc., defined
+************************************************************************/
+
+/* File:      flora_datatype_symbols.flh -- FLORA-2 datatype names
+**
+** Author(s): Michael Kifer
+**
+** Contact:   flora-users@lists.sourceforge.net
+**
+** Copyright (C) by
+**      The Research Foundation of the State University of New York, 1999-2013.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**      http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+**
+**
+*/
+
+
+
+/* Data types */
+
+
+
+
+
+
+
+
+
+
+
+/* _real is synonymized with _double */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* constants used for parsing */
+
+
+
+/* Constant used in the parsed result */
+
+
+
+/* these prefixes are added to atoms that are supposed to represent the
+   data types _string, _iri, etc. */
+
+
+
+
+
+'_$_$_flora''mod''main''sub'(__newvar1,'_object',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_long',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_integer',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_decimal',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_double',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_symbol',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_string',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_dateTime' ,__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_date' ,__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_duration' ,__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_time' ,__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_iri' ,__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_boolean',__newvar2).
+'_$_$_flora''mod''main''sub'(__newvar1,'_list' ,__newvar2).
+
+
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone5G,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iOS,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_applicationConfig,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_smartPhone,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_loginInfo,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_company,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastName,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellPhone,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_yahooMApp,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_samGalaxy,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_android,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_phoneLocalCode,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellIMEINo,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_emailContact,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_textCharge,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellOperatingSystem,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_phoneStateCode,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone3GS,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_defaultEmailClient,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_dataCharge,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastTimeConnected,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_wifiConnection,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_initTime,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_application,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellularConnection,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_range,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_loginId,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_middleName,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_connectionSpeed,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_outgoingPort,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_password,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_phoneCountryCode,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastUpdateTime,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_numberOfConcurrentConnection,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_person,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastUpdateDate,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_address,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_samGalaxyS2,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_connectionName,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_internationalRoamingFlag,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_frequency,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_serverSetting,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_callMinutesLeft,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_emailClientConfig,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_domainName,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_dataAmountLeft,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_portNo,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_incomingPort,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_emailClient,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_carrierClientApplication,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_country,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastDateUsed,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_phoneNumber,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_initDate,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_serviceProvider,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone3G,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastTimeUsed,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_nameID,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_totalCharge,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_periveledgeLevel,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_zip,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_carrierCo,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_connection,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_serviceType,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_gmailApp,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_activatedFlag,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_firstName,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_homeCountry,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_callCharge,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_samGalaxyS3,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_phoneContact,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellVendor,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_lastDateConnected,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone4G,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_isConfigFlag,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_dataPlan,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_cellVersion,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_exchangeServer,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_iPhone4GS,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_connectionFlag,__fldnewvar2,__fldnewvar3).
+'_$_$_flora''mod''main''mvd'(__fldnewvar1,problem_serverConfig,__fldnewvar2,__fldnewvar3).

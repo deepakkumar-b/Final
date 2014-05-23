@@ -1,0 +1,708 @@
+
+% Describing the client techonlogy
+
+/*
+**
+** A general class of cell phones are created to express general connectivity 
+** features of cell phones. This class represents the Device entity of given 
+** ERD. Some of the constraints are assumed according to personal knowledege
+** such as the constraints about the limit number of operating systems for a 
+** smart phone.
+**
+*/
+isa_ext(cid(cellPhone,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(cid(smartPhone,cdda),cid(cellPhone,cdda)).
+	isa_ext(cid(samGalaxy,cdda),cid(smartPhone,cdda)).
+		isa_ext(cid(samGalaxyS2,cdda),cid(samGalaxy,cdda)).
+		isa_ext(cid(samGalaxyS3,cdda),cid(samGalaxy,cdda)).
+	isa_ext(cid(iPhone,cdda),cid(smartPhone,cdda)).
+		isa_ext(cid(iPhone3G,cdda),cid(iPhone,cdda)).
+    		isa_ext(cid(iPhone3GS,cdda),cid(iPhone,cdda)).
+		isa_ext(cid(iPhone4G,cdda),cid(iPhone,cdda)).
+    		isa_ext(cid(iPhone4GS,cdda),cid(iPhone,cdda)).
+		isa_ext(cid(iPhone5G,cdda),cid(iPhone,cdda)).
+
+isa_ext(cid(cellOperatingSystem,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(android,cdda),cid(cellOperatingSystem,cdda)).
+	isa_ext(cid(iOS,cdda),cid(cellOperatingSystem,cdda)).
+
+isa_ext(rid(hasOS,cdda),cid('CDF Relations',cdf)).
+
+maxAttr_ext(cid(smartPhone,cdda),rid(hasOS,cdda),
+	cid(cellOperatingSystem,cdda),1).
+
+hasAttr_ext(cid(smartPhone,cdda),rid(hasOS,cdda),cid(cellOperatingSystem,cdda)).
+	allAttr_ext(cid(iPhone,cdda),rid(hasOS,cdda),cid(iOS,cdda)).
+	allAttr_ext(cid(samGalaxy,cdda),rid(hasOS,cdda),cid(android,cdda)).
+
+% We emnbeded the cell model in the classes of smartPhones 
+% isa_ext(cid(cellModel,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(cid(cellVendor,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasVendor,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(smartPhone,cdda),rid(hasVendor,cdda),cid(cellVendor,cdda)).
+	
+maxAttr_ext(cid(smartPhone,cdda),rid(hasVendor,cdda),cid(cellVendor,cdda),1).
+	
+isa_ext(cid(cellVersion,cdda),cid(allAtoms,cdfpt)).
+	
+isa_ext(rid(hasVersion,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(cellOperatingSystem,cdda),rid(hasVersion,cdda),
+	cid(cellVersion,cdda)).
+	
+maxAttr_ext(cid(cellOperatingSystem,cdda),rid(hasVersion,cdda),
+	cid(cellVersion,cdda),1).
+	
+isa_ext(cid(cellIMEINo,cdda),cid(allAtoms,cdfpt)).
+	
+isa_ext(rid(hasIMEINo,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(smartPhone,cdda),rid(hasIMEINo,cdda),cid(cellIMEINo,cdda)).
+	
+maxAttr_ext(cid(smartPhone,cdda),rid(hasIMEINo,cdda),cid(cellIMEINo,cdda),1).
+	
+isa_ext(cid(lastUpdateDate,cdda),cid(allAtoms,cdfpt)).
+	
+isa_ext(rid(hasLastUpdateDate,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(cellOperatingSystem,cdda),rid(hasLastUpdateDate,cdda),
+	cid(lastUpdateDate,cdda)).
+	
+maxAttr_ext(cid(cellOperatingSystem,cdda),rid(hasLastUpdateDate,cdda),
+	cid(lastUpdateDate,cdda),1).
+	
+isa_ext(cid(lastUpdateTime,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLastUpdateTime,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(cellOperatingSystem,cdda),rid(hasLastUpdateTime,cdda),
+	cid(lastUpdateTime,cdda)).
+	
+maxAttr_ext(cid(cellOperatingSystem,cdda),rid(hasLastUpdateTime,cdda),
+	cid(lastUpdateTime,cdda),1).
+	
+	
+/*
+** This set of objects instantiates the class and will be used in the later 
+** code generation.
+*/
+
+%isa_ext(oid(iPhoneReza3GS1,cdda),cid(iPhone3GS,cdda)).
+%isa_ext(oid(iOS5Reza3GS1,cdda),cid(iOS,cdda)).
+%isa_ext(oid(androidReza3GS1,cdda),cid(android,cdda)).
+%       	hasAttr_ext(oid(iPhoneReza3GS1,cdda),rid(hasOS,cdda)
+%        	,oid(iOS5Reza3GS1,cdda)).
+%isa_ext(oid(iOS5Reza3GS2,cdda),cid(iOS,cdda)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the entity Connection of given ERD. This entity
+** will have two subclasses; WiFi and cellularConnection.
+*/
+
+
+isa_ext(cid(connection,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(wifiConnection,cdda),cid(connection,cdda)).
+	isa_ext(cid(cellularConnection,cdda),cid(connection,cdda)).
+
+isa_ext(cid(connectionSpeed,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasConnectionSpeed,cdda),cid('CDF Relations',cdf)).
+
+allAttr_ext(cid(connection,cdda),rid(hasConnectionSpeed,cdda),cid(connectionSpeed,cdda)).
+
+% TODO: Ask Jun about the limit of connection speed
+	
+%maxAttr_ext(cid(connection,cdda),rid(hasConnectionSpeed,cdda),
+%	cid(connectionSpeed,cdda),1).
+	
+isa_ext(cid(connectionFlag,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasConnectionFlag,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(connection,cdda),rid(hasConnectionFlag,cdda),
+	cid(connectionFlag,cdda)).
+
+maxAttr_ext(cid(connection,cdda),rid(hasConnectionFlag,cdda),
+	cid(connectionFlag,cdda),1).
+	
+isa_ext(cid(connectionName,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasConnectionName,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(wifiConnection,cdda),rid(hasConnectionName,cdda),
+	cid(connectionName,cdda)).
+
+maxAttr_ext(cid(wifiConnection,cdda),rid(hasConnectionName,cdda),
+	cid(connectionName,cdda),1).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the telecommunication companies which form the 
+** class of Service Provider in the ERD.
+*/
+
+isa_ext(cid(company,cdda),cid('CDF Classes',cdf)).
+isa_ext(cid(carrierCo,cdda),cid(company,cdda)).
+%	isa_ext(oid(att,cdda),cid(carrierCo,cdda)).
+%	isa_ext(oid(verizon,cdda),cid(carrierCo,cdda)).
+%	isa_ext(oid(tmobile,cdda),cid(carrierCo,cdda)).
+%	isa_ext(oid(sprint,cdda),cid(carrierCo,cdda)).
+
+isa_ext(cid(homeCountry,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasHomeCountry,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(carrierCo,cdda),rid(hasHomeCountry,cdda),
+	cid(homeCountry,cdda)).
+
+maxAttr_ext(cid(carrierCo,cdda),rid(hasHomeCountry,cdda),
+	cid(homeCountry,cdda),1).
+	
+isa_ext(cid(range,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasRange,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(carrierCo,cdda),rid(hasRange,cdda),
+	cid(range,cdda)).
+
+maxAttr_ext(cid(carrierCo,cdda),rid(hasRange,cdda),
+	cid(range,cdda),1).
+	
+isa_ext(cid(frequency,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasFrequency,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(carrierCo,cdda),rid(hasFrequency,cdda),
+	cid(frequency,cdda)).
+
+maxAttr_ext(cid(carrierCo,cdda),rid(hasFrequency,cdda),
+	cid(frequency,cdda),1).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the partnership of two carrier companies via a  
+** class product.
+*/
+
+allAttr_ext(cid(partnership(cid(carrierCo,cdda),cid(carrierCo,cdda))),
+	rid(hasSpecialDataPlan),cid(totalCharge,cdda)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the application and its sub-classes including   
+** email client and web client.
+*/
+
+
+isa_ext(cid(application,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(emailClient,cdda),cid(application,cdda)).
+		isa_ext(cid(defaultEmailClient,cdda),cid(emailClient,cdda)).
+		isa_ext(cid(gmailApp,cdda),cid(emailClient,cdda)).
+		isa_ext(cid(yahooMApp,cdda),cid(emailClient,cdda)).
+
+	isa_ext(cid(carrierClientApplication,cdda),cid(application,cdda)).
+		isa_ext(cid(attClientApp,cdda),
+			cid(carrierClientApplication,cdda)).
+		isa_ext(cid(verizonClientApp,cdda),
+			cid(carrierClientApplication,cdda)).
+		isa_ext(cid(tmobileClientApp,cdda),
+			cid(carrierClientApplication,cdda)).
+		isa_ext(cid(sprintClientApp,cdda),
+			cid(carrierClientApplication,cdda)).
+
+isa_ext(cid(lastTimeUsed,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLastTimeUsed,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(application,cdda),rid(hasLastTimeUsed,cdda),
+	cid(lastTimeUsed,cdda)).
+	
+maxAttr_ext(cid(application,cdda),rid(hasLastTimeUsed,cdda),
+	cid(lastTimeUsed,cdda),1).
+	
+isa_ext(cid(lastDateUsed,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLastDateUsed,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(application,cdda),rid(hasLastDateUsed,cdda),
+	cid(lastDateUsed,cdda)).
+	
+maxAttr_ext(cid(application,cdda),rid(hasLastDateUsed,cdda),
+	cid(lastDateUsed,cdda),1).
+	
+isa_ext(cid(initTime,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasInitTime,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(application,cdda),rid(hasInitTime,cdda),
+	cid(initTime,cdda)).
+	
+maxAttr_ext(cid(application,cdda),rid(hasInitTime,cdda),
+	cid(initTime,cdda),1).
+	
+isa_ext(cid(initDate,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasInitDate,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(application,cdda),rid(hasInitDate,cdda),
+	cid(initDate,cdda)).
+	
+maxAttr_ext(cid(application,cdda),rid(hasInitDate,cdda),
+	cid(initDate,cdda),1).
+	
+isa_ext(cid(periveledgeLevel,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasPeriveledgeLevel,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(application,cdda),rid(hasPeriveledgeLevel,cdda),
+	cid(periveledgeLevel,cdda)).
+	
+maxAttr_ext(cid(application,cdda),rid(hasPeriveledgeLevel,cdda),
+	cid(periveledgeLevel,cdda),1).
+	
+
+/*
+**
+** Email client is defined as a subclass of application but it has some specific
+** features such as connectivity.
+**
+*/
+
+isa_ext(cid(lastTimeConnected,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLastTimeConnected,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClient,cdda),rid(hasLastTimeConnected,cdda),
+	cid(lastTimeConnected,cdda)).
+	
+maxAttr_ext(cid(emailClient,cdda),rid(hasLastTimeConnected,cdda),
+	cid(lastTimeConnected,cdda),1).
+	
+isa_ext(cid(lastDateConnected,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLastDateConnected,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClient,cdda),rid(hasLastDateConnected,cdda),
+	cid(lastDateConnected,cdda)).
+	
+maxAttr_ext(cid(emailClient,cdda),rid(hasLastDateConnected,cdda),
+	cid(lastDateConnected,cdda),1).
+	
+/*
+**
+** Application config is defined as a separate entity in ERD.
+**
+*/
+
+isa_ext(cid(applicationConfig,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(emailClientConfig,cdda),cid(applicationConfig,cdda)).
+
+isa_ext(cid(isConfigFlag,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasConfigFlag,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(applicationConfig,cdda),rid(hasConfigFlag,cdda),
+	cid(isConfigFlag,cdda)).
+	
+maxAttr_ext(cid(applicationConfig,cdda),rid(hasConfigFlag,cdda),
+	cid(isConfigFlag,cdda),1).
+	
+isa_ext(rid(hasEmailClientConfig,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClient,cdda),rid(hasEmailClientConfi,cdda),
+	cid(emailClientConfig,cdda)).
+	
+maxAttr_ext(cid(emailClient,cdda),rid(hasEmailClientConfi,cdda),
+	cid(emailClientConfig,cdda),1).
+	
+/*
+**
+** ERD defines a set of attributes for email client configurations.
+**
+*/
+
+isa_ext(cid(portNo,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(incomingPort,cdda),cid(allIntegers,cdfpt)).
+	isa_ext(cid(outgoingPort,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasPortNo,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasIncomingPort,cdda),rid(hasPortNo,cdda)).
+	isa_ext(rid(hasOutgoingPort,cdda),rid(hasPortNo,cdda)).
+
+hasAttr_ext(cid(portNo,cdda),rid(hasIncomingPort,cdda),cid(incomingPort,cdda)).
+
+hasAttr_ext(cid(portNo,cdda),rid(hasOutgoingPort,cdda),cid(outgoingPort,cdda)).
+
+maxAttr_ext(cid(portNo,cdda),rid(hasIncomingPort,cdda),
+	cid(incomingPort,cdda),1).
+
+maxAttr_ext(cid(portNo,cdda),rid(hasOutgoingPort,cdda),
+	cid(outgoingPort,cdda),1).
+
+isa_ext(rid(hasPortConfig,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasPortConfig,cdda),
+	cid(portNo,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasPortConfig,cdda),
+	cid(portNo,cdda),1).
+	
+
+isa_ext(rid(hasEmailLogin,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasEmailLogin,cdda),
+	cid(loginInfo,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasEmailLogin,cdda),
+	cid(loginInfo,cdda),1).
+	
+% Commented classes are moved to instances
+
+isa_ext(cid(serviceProvider,cdda),cid('CDF Classes',cdf)).
+%	isa_ext(cid(gmail,cdda),cid(serviceProvider,cdf)).
+%	isa_ext(cid(messagingAPI,cdda),cid(serviceProvider,cdf)).
+%	isa_ext(cid(yahooMailService,cdda),cid(serviceProvider,cdf)).
+
+isa_ext(cid(serviceType,cdda),cid('CDF Classes',cdf)).
+%	isa_ext(cid(webinterface,cdda),cid(serviceType,cdf)).
+%	isa_ext(cid(rest,cdda),cid(serviceType,cdf)).
+%	isa_ext(cid(appREST,cdda),cid(serviceType,cdf)).
+
+isa_ext(rid(hasServiceProvider,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasServiceProvider,cdda),
+	cid(serviceProvider,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasServiceProvider,cdda),
+	cid(serviceProvider,cdda),1).
+	
+isa_ext(cid(domainName,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasDomainName,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasDomainName,cdda),
+	cid(domainName,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasDomainName,cdda),
+	cid(domainName,cdda),1).
+	
+/*
+** This set of classes defines the components required for the configuration of  
+** email client and web client.
+*/
+
+isa_ext(cid(exchangeServer,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(rid(hasExchangeServer,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasExchangeServer,cdda),
+	cid(exchangeServer,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasExchangeServer,cdda),
+	cid(exchangeServer,cdda),1).
+	
+isa_ext(cid(numberOfConcurrentConnection,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasNumberOfConcurrentConnection,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),
+	rid(hasNumberOfConcurrentConnection,cdda),
+	cid(numberOfConcurrentConnection,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),
+	rid(hasNumberOfConcurrentConnection,cdda),
+	cid(numberOfConcurrentConnection,cdda),1).
+	
+isa_ext(cid(serverSetting,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasServerSetting,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasServerSetting,cdda),
+	cid(serverSetting,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasServerSetting,cdda),
+	cid(serverSetting,cdda),1).
+	
+isa_ext(cid(serverConfig,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasServerConfig,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(emailClientConfig,cdda),rid(hasServerConfig,cdda),
+	cid(serverConfig,cdda)).
+	
+maxAttr_ext(cid(emailClientConfig,cdda),rid(hasServerConfig,cdda),
+	cid(serverConfig,cdda),1).
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+**
+** Defining the customer entity in ERD 
+**
+*/
+				
+isa_ext(cid(person,cdda),cid('CDF Classes',cdf)).
+	isa_ext(cid(customer,cdda),cid(person,cdf)).
+
+		
+
+/*
+**
+** Defining the name of a person including three parts according to ERD
+**
+*/
+
+isa_ext(cid(nameID,cdda),cid('CDF Classes',cdf)).
+isa_ext(cid(firstName,cdda),cid(allAtoms,cdfpt)).
+isa_ext(cid(middleName,cdda),cid(allAtoms,cdfpt)).
+isa_ext(cid(lastName,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasNameAttr,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasFirstName,cdda),rid(hasNameAttr,cdda)).
+	isa_ext(rid(hasMiddleName,cdda),rid(hasNameAttr,cdda)).
+	isa_ext(rid(hasLastName,cdda),rid(hasNameAttr,cdda)).
+
+hasAttr_ext(cid(nameID,cdda),rid(hasFirstName,cdda),cid(firstName,cdda)).
+allAttr_ext(cid(nameID,cdda),rid(hasMiddleName,cdda),cid(middleName,cdda)).
+hasAttr_ext(cid(nameID,cdda),rid(hasLastName,cdda),cid(lastName,cdda)).
+
+isa_ext(rid(hasNameID,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(person,cdda),rid(hasNameID,cdda),
+	cid(nameID,cdda)).
+	
+maxAttr_ext(cid(person,cdda),rid(hasNameID,cdda),
+	cid(nameID,cdda),1).
+	
+/*
+**
+** Defining the address of a person including two parts of ZIP and country 
+** according to ERD
+**
+*/
+
+isa_ext(cid(address,cdda),cid('CDF Classes',cdf)).
+isa_ext(cid(zip,cdda),cid(allIntegers,cdfpt)).
+isa_ext(cid(country,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasAddrAttr,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasZIP,cdda),rid(hasAddrAttr,cdda)).
+	isa_ext(rid(hasCountry,cdda),rid(hasAddrAttr,cdda)).
+
+hasAttr_ext(cid(address,cdda),rid(hasZIP,cdda),cid(zip,cdda)).
+hasAttr_ext(cid(address,cdda),rid(hasCountry,cdda),cid(country,cdda)).
+
+isa_ext(rid(hasAddress,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(person,cdda),rid(hasAddress,cdda),
+	cid(address,cdda)).
+	
+maxAttr_ext(cid(person,cdda),rid(hasAddress,cdda),
+	cid(address,cdda),1).
+	
+/*
+**
+** Defining other attributes of customer based on the ERD
+**
+*/
+
+
+isa_ext(cid(emailContact,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasEmailContact,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(customer,cdda),rid(hasEmailContact,cdda),
+	cid(emailContact,cdda)).
+	
+maxAttr_ext(cid(customer,cdda),rid(hasEmailContact,cdda),
+	cid(emailContact,cdda),1).
+	
+isa_ext(cid(phoneContact,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasPhoneContact,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(customer,cdda),rid(hasPhoneContact,cdda),
+	cid(phoneContact,cdda)).
+	
+maxAttr_ext(cid(customer,cdda),rid(hasPhoneContact,cdda),
+	cid(phoneContact,cdda),1).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+**
+** Defining the data_plan of a person including two parts of ZIP and country 
+** according to ERD
+**
+*/
+
+isa_ext(cid(dataPlan,cdda),cid('CDF Classes',cdf)).
+	
+/*
+**
+** Defining the login information entity for the data plan account 
+**
+*/
+
+isa_ext(cid(loginInfo,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(cid(loginId,cdda),cid(allAtoms,cdfpt)).
+isa_ext(cid(password,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasLoginAttr,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasLoginIdAttr,cdda),cid(hasLoginAttr,cdf)).
+	isa_ext(rid(hasPasswordAttr,cdda),cid(hasLoginAttr,cdf)).
+
+hasAttr_ext(cid(loginInfo,cdda),rid(hasLoginIdAttr,cdda),
+	cid(loginId,cdda)).
+hasAttr_ext(cid(loginInfo,cdda),rid(hasPasswordAttr,cdda),
+	cid(password,cdda)).
+
+isa_ext(rid(hasLoginInfo,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasLoginInfo,cdda),
+	cid(loginInfo,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasLoginInfo,cdda),
+	cid(loginInfo,cdda),1).
+	
+/*
+**
+** Defining the phone number which includes local code, state code, and country
+** code.
+**
+*/
+
+isa_ext(cid(phoneNumber,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(cid(phoneLocalCode,cdda),cid(allIntegers,cdfpt)).
+isa_ext(cid(phoneStateCode,cdda),cid(allIntegers,cdfpt)).
+isa_ext(cid(phoneCountryCode,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasPhoneAttr,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasLocalCodeAttr,cdda),cid(hasPhoneAttr,cdf)).
+	isa_ext(rid(hasStateCodeAttr,cdda),cid(hasPhoneAttr,cdf)).
+	isa_ext(rid(hasCountryCodeAttr,cdda),cid(hasPhoneAttr,cdf)).
+
+hasAttr_ext(cid(phoneNumber,cdda),rid(hasLocalCodeAttr,cdda),
+	cid(phoneLocalCode,cdda)).
+hasAttr_ext(cid(phoneNumber,cdda),rid(hasStateCodeAttr,cdda),
+	cid(phoneStateCode,cdda)).
+hasAttr_ext(cid(phoneNumber,cdda),rid(hasCountryCodeAttr,cdda),
+	cid(phoneCountryCode,cdda)).
+
+isa_ext(rid(hasPhoneNumber,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasPhoneNumber,cdda),
+	cid(phoneNumber,cdda)).
+	
+minAttr_ext(cid(dataPlan,cdda),rid(hasPhoneNumber,cdda),
+	cid(phoneNumber,cdda),1).
+	
+/*
+**
+** Other attributes of dataPlan
+**
+*/
+
+isa_ext(cid(internationalRoamingFlag,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasInternationalRoamingFlag,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasInternationalRoamingFlag,cdda),
+	cid(internationalRoamingFlag,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasInternationalRoamingFlag,cdda),
+	cid(internationalRoamingFlag,cdda),1).
+	
+isa_ext(cid(activatedFlag,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasActivatedFlag,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasActivatedFlag,cdda),
+	cid(activatedFlag,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasActivatedFlag,cdda),
+	cid(activatedFlag,cdda),1).
+	
+isa_ext(cid(callMinutesLeft,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasCallMinutesLeft,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasCallMinutesLeft,cdda),
+	cid(callMinutesLeft,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasCallMinutesLeft,cdda),
+	cid(callMinutesLeft,cdda),1).
+	
+isa_ext(cid(dataAmountLeft,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasDataAmountLeft,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasDataAmountLeft,cdda),
+	cid(dataAmountLeft,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasDataAmountLeft,cdda),
+	cid(dataAmountLeft,cdda),1).
+	
+/*
+**
+** Defining the charge which includes call, text, and data charges.
+**
+*/
+
+isa_ext(cid(totalCharge,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(cid(callCharge,cdda),cid(allIntegers,cdfpt)).
+isa_ext(cid(textCharge,cdda),cid(allIntegers,cdfpt)).
+isa_ext(cid(dataCharge,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasChargeAttr,cdda),cid('CDF Relations',cdf)).
+	isa_ext(rid(hasCallChargeAttr,cdda),cid(hasChargeAttr,cdf)).
+	isa_ext(rid(hasTextChargeAttr,cdda),cid(hasChargeAttr,cdf)).
+	isa_ext(rid(hasDataChargeAttr,cdda),cid(hasChargeAttr,cdf)).
+
+hasAttr_ext(cid(totalCharge,cdda),rid(hasCallChargeAttr,cdda),
+	cid(callCharge,cdda)).
+hasAttr_ext(cid(totalCharge,cdda),rid(hasTextChargeAttr,cdda),
+	cid(textCharge,cdda)).
+hasAttr_ext(cid(totalCharge,cdda),rid(hasDataChargeAttr,cdda),
+	cid(dataCharge,cdda)).
+
+isa_ext(rid(hasTotalCharge,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(dataPlan,cdda),rid(hasTotalCharge,cdda),
+	cid(totalCharge,cdda)).
+	
+maxAttr_ext(cid(dataPlan,cdda),rid(hasTotalCharge,cdda),
+	cid(totalCharge,cdda),1).
+	
+
+
+/*
+**
+** Defining the userID of a person including two parts for two classes of person
+** and data_plan according to ERD. Product class cust_plan combines the class of
+** dataPlan with customer.
+**
+*/
+
+isa_ext(cid(cust_plan(cid(customer,cdda),cid(dataPlan,cdda)),cdda),
+	cid('CDF Classes',cdf)).
+
+isa_ext(rid(hasCustomerLogin,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(cust_plan(cid(customer,cdda),cid(dataPlan,cdda)),cdda),
+	rid(hasCustomerLogin,cdda),cid(loginInfo,cdda)).
+	
+maxAttr_ext(cid(cust_plan(cid(customer,cdda),cid(dataPlan,cdda)),cdda),
+	rid(hasCustomerLogin,cdda),cid(loginInfo,cdda),1).
+	
+
+		

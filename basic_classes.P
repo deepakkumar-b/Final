@@ -1,0 +1,94 @@
+
+% Describing the client techonlogy
+
+/*
+**
+** A general class of problem has been described below. Each problem will be
+** bound to each class of main objects. 
+**
+*/
+isa_ext(cid(problem,cdda),cid('CDF Classes',cdf)).
+
+isa_ext(cid(numberOfOccurences,cdda),cid(allIntegers,cdfpt)).
+	
+isa_ext(rid(hasNumberOfOccurences,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(problem,cdda),rid(hasNumberOfOccurences,cdda),
+	cid(numberOfOccurences,cdda)).
+	
+maxAttr_ext(cid(problem,cdda),rid(hasNumberOfOccurences,cdda),
+	cid(numberOfOccurences,cdda),1).
+	
+/*
+**
+** 'summary' can be used in problem and solution.
+**
+*/
+
+isa_ext(cid(summary,cdda),cid(allAtoms,cdfpt)).
+	
+isa_ext(rid(hasSummary,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(problem,cdda),rid(hasSummary,cdda),cid(summary,cdda)).
+	
+maxAttr_ext(cid(problem,cdda),rid(hasSummary,cdda),cid(summary,cdda),1).
+	
+hasAttr_ext(cid(solution,cdda),rid(hasSummary,cdda),cid(summary,cdda)).
+	
+maxAttr_ext(cid(solution,cdda),rid(hasSummary,cdda),cid(summary,cdda),1).
+	
+/*
+**
+** 'desc' can be used in problem and solution.
+**
+*/
+
+isa_ext(cid(desc,cdda),cid(allAtoms,cdfpt)).
+	
+isa_ext(rid(hasDesc,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(problem,cdda),rid(hasDesc,cdda),cid(desc,cdda)).
+	
+maxAttr_ext(cid(problem,cdda),rid(hasDesc,cdda),cid(desc,cdda),1).
+	
+hasAttr_ext(cid(solution,cdda),rid(hasDesc,cdda),cid(desc,cdda)).
+	
+maxAttr_ext(cid(solution,cdda),rid(hasDesc,cdda),cid(desc,cdda),1).
+	
+/*
+**
+** 'desc' can be used in problem and solution.
+**
+*/
+
+isa_ext(cid(timestamp,cdda),cid(allIntegers,cdfpt)).
+	
+isa_ext(rid(hasTimestamp,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(cid(problem,cdda),rid(hasTimestamp,cdda),cid(timestamp,cdda)).
+	
+maxAttr_ext(cid(problem,cdda),rid(hasTimestamp,cdda),cid(timestamp,cdda),1).
+	
+hasAttr_ext(cid(solution,cdda),rid(hasTimestamp,cdda),cid(timestamp,cdda)).
+	
+maxAttr_ext(cid(solution,cdda),rid(hasTimestamp,cdda),cid(timestamp,cdda),1).
+	
+
+
+/*
+**
+** These classes are defined for problems of primitive typed components. These
+** problems can be tested via simple checks on the value of the object.
+**
+*/
+
+isa_ext(cid(pt_problem,cdda),cid(problem,cdda)).
+	isa_ext(cid(int_problem,cdda),cid(pt_problem,cdda)).
+	isa_ext(cid(float_problem,cdda),cid(pt_problem,cdda)).
+	isa_ext(cid(atom_problem,cdda),cid(pt_problem,cdda)).
+
+
+
+
+
+

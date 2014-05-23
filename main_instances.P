@@ -1,0 +1,386 @@
+
+% Describing the client techonlogy
+
+/*
+**
+** A general class of cell phones are created to express general connectivity 
+** features of cell phones. This class represents the Device entity of given 
+** ERD. Some of the constraints are assumed according to personal knowledege
+** such as the constraints about the limit number of operating systems for a 
+** smart phone.
+**
+*/
+isa_ext(oid(iPhone5GX,cdda),cid(iPhone5G,cdda)).
+
+isa_ext(oid(iOSX,cdda),cid(iOS,cdda)).
+
+hasAttr_ext(oid(iPhone5GX,cdda),rid(hasOS,cdda),oid(iOSX,cdda)).
+
+hasAttr_ext(oid(iPhone5GX,cdda),rid(hasVendor,cdda),oid(attLakeGrove,cdfpt)).
+	
+hasAttr_ext(oid(iOSX,cdda),rid(hasVersion,cdda),oid(beta,cdda)).
+	
+hasAttr_ext(oid(iPhone5GX,cdda),rid(hasIMEINo,cdda),oid(p5987,cdda)).
+	
+hasAttr_ext(oid(iOSX,cdda),rid(hasLastUpdateDate,cdda),oid('jan_21_2013',cdda)).
+	
+hasAttr_ext(oid(iOSX,cdda),rid(hasLastUpdateTime,cdda),oid('am_10_20_39',cdda)).
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the entity Connection of given ERD. This entity
+** will have two subclasses; WiFi and cellularConnection.
+*/
+
+isa_ext(oid(wifiConnectionX,cdda),cid(wifiConnection,cdda)).
+isa_ext(oid(cellularConnectionX,cdda),cid(cellularConnection,cdda)).
+
+% TODO: Ask Jun about the limit of connection speed
+	
+
+hasAttr_ext(oid(wifiConnectionX,cdda),rid(hasConnectionFlag,cdda),
+	oid('1',cdfpt)).
+
+hasAttr_ext(oid(cellularConnectionX,cdda),rid(hasConnectionFlag,cdda),
+	oid('1',cdfpt)).
+	
+hasAttr_ext(oid(wifiConnectionX,cdda),rid(hasConnectionName,cdda),
+	cid(kbsl,cdfpt)).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of classes defines the telecommunication companies which form the 
+** class of Service Provider in the ERD.
+*/
+
+isa_ext(oid(att,cdda),cid(carrierCo,cdda)).
+isa_ext(oid(verizon,cdda),cid(carrierCo,cdda)).
+isa_ext(oid(tmobile,cdda),cid(carrierCo,cdda)).
+isa_ext(oid(sprint,cdda),cid(carrierCo,cdda)).
+
+hasAttr_ext(oid(att,cdda),rid(hasHomeCountry,cdda),oid(usa,cdfpt)).
+hasAttr_ext(oid(verizon,cdda),rid(hasHomeCountry,cdda),oid(usa,cdfpt)).
+
+hasAttr_ext(oid(tmobile,cdda),rid(hasHomeCountry,cdda),oid(usa,cdfpt)).
+hasAttr_ext(oid(sprint,cdda),rid(hasHomeCountry,cdda),oid(usa,cdfpt)).
+
+hasAttr_ext(oid(att,cdda),rid(hasRange,cdda),oid('4500',cdda)).
+hasAttr_ext(oid(att,cdda),rid(hasFrequency,cdda),oid('12',cdda)).
+
+hasAttr_ext(oid(verizon,cdda),rid(hasRange,cdda),oid('4500',cdda)).
+hasAttr_ext(oid(verizon,cdda),rid(hasFrequency,cdda),oid('12',cdda)).
+
+hasAttr_ext(oid(tmobile,cdda),rid(hasRange,cdda),oid('4500',cdda)).
+hasAttr_ext(oid(tmobile,cdda),rid(hasFrequency,cdda),oid('12',cdda)).
+
+hasAttr_ext(oid(sprint,cdda),rid(hasRange,cdda),oid('4500',cdda)).
+hasAttr_ext(oid(sprint,cdda),rid(hasFrequency,cdda),oid('12',cdda)).
+
+allAttr_ext(oid(partnership(oid(att,cdda),oid(verizon,cdda))),
+	rid(hasSpecialDataPlan),oid(TC,cdda)).
+
+isa_ext(oid(rrrr,cdda),cid(totalCharge,cdda)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+** This set of objects defines the application and its sub-classes including   
+** email client and web client. 
+*/
+
+% One of these three should be existing
+isa_ext(oid(defaultEmailClientX,cdda),cid(defaultEmailClient,cdda)).
+isa_ext(oid(gmailAppX,cdda),cid(gmailApp,cdda)).
+isa_ext(oid(yahooMAppX,cdda),cid(yahooMApp,cdda)).
+
+% One of these four should be existing
+isa_ext(oid(attClientApp,cdda),cid(attClientApp,cdda)).
+isa_ext(oid(verizonClientApp,cdda),cid(verizonClientApp,cdda)).
+isa_ext(oid(tmobileClientApp,cdda),cid(tmobileClientApp,cdda)).
+isa_ext(oid(sprintClientApp,cdda),cid(sprintClientApp,cdda)).
+
+
+hasAttr_ext(oid(attClientApp,cdda),rid(hasLastTimeUsed,cdda),
+	oid('am_10_20_39',cdda)).
+	
+hasAttr_ext(oid(attClientApp,cdda),rid(hasLastDateUsed,cdda),
+	oid('jan_21_2013',cdda)).
+	
+hasAttr_ext(oid(attClientApp,cdda),rid(hasInitTime,cdda),
+	oid('am_10_20_39',cdda)).
+	
+hasAttr_ext(oid(attClientApp,cdda),rid(hasInitDate,cdda),
+	oid('jan_21_2013',cdda)).
+	
+hasAttr_ext(oid(attClientApp,cdda),rid(hasPeriveledgeLevel,cdda),
+	oid(periveledgeLevel,cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasLastTimeUsed,cdda),
+	oid('am_10_20_39',cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasLastDateUsed,cdda),
+	oid('jan_21_2013',cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasInitTime,cdda),
+	oid('am_10_20_39',cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasInitDate,cdda),
+	oid('jan_21_2013',cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasPeriveledgeLevel,cdda),
+	oid(periveledgeLevel,cdda)).
+	
+
+/*
+**
+** Email client is defined as a subclass of application but it has some specific
+** features such as connectivity.
+**
+*/
+
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasLastTimeConnected,cdda),
+	oid('am_10_20_39',cdda)).
+	
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasLastDateConnected,cdda),
+	oid('jan_21_2013',cdda)).
+
+/*
+**
+** Application config is defined as a separate entity in ERD.
+**
+*/
+
+isa_ext(oid(emailClientConfigX,cdda),cid(emailClientConfig,cdda)).
+
+hasAttr_ext(cid(emailClientConfigX,cdda),rid(hasConfigFlag,cdda),
+	oid('1',cdda)).
+
+hasAttr_ext(oid(gmailAppX,cdda),rid(hasEmailClientConfig,cdda),
+	oid(emailClientConfigX,cdda)).
+
+/*
+**
+** ERD defines a set of attributes for email client configurations.
+**
+*/
+
+isa_ext(oid(portNoX,cdda),cid(portNo,cdda)).
+
+hasAttr_ext(oid(portNo,cdda),rid(hasIncomingPort,cdda),oid('202',cdda)).
+
+hasAttr_ext(oid(portNo,cdda),rid(hasOutgoingPort,cdda),oid('203',cdda)).
+
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasPortConfig,cdda),
+	oid(portNoX,cdda)).
+	
+isa_ext(oid(loginInfoX,cdda),cid(loginInfo,cdda)).
+
+hasAttr_ext(oid(loginInfoX,cdda),rid(hasLoginIdAttr,cdda),
+	oid('r.basseda',cdda)).
+hasAttr_ext(oid(loginInfoY,cdda),rid(hasPasswordAttr,cdda),
+	oid('123456',cdda)).
+
+hasAttr_ext(oid(emailClientConfig,cdda),rid(hasEmailLogin,cdda),
+	oid(loginInfoX,cdda)).
+	
+isa_ext(oid(gmail,cdda),cid(serviceProvider,cdf)).
+isa_ext(oid(messagingAPI,cdda),cid(serviceProvider,cdf)).
+isa_ext(oid(yahooMailService,cdda),cid(serviceProvider,cdf)).
+
+isa_ext(oid(webinterface,cdda),cid(serviceType,cdf)).
+isa_ext(oid(rest,cdda),cid(serviceType,cdf)).
+isa_ext(oid(appREST,cdda),cid(serviceType,cdf)).
+
+isa_ext(rid(hasServiceProvider,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasServiceProvider,cdda),
+	cid(serviceProviderX,cdda)).
+	
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasDomainName,cdda),
+	cid('gmail.com',cdda)).
+	
+/*
+** This set of classes defines the components required for the configuration of  
+** email client and web client.
+*/
+
+isa_ext(oid(exchangeServerX,cdda),cid(exchangeServer,cdda)).
+
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasExchangeServer,cdda),
+	oid(exchangeServerX,cdda)).
+	
+isa_ext(cid(numberOfConcurrentConnection,cdda),cid(allIntegers,cdfpt)).
+
+isa_ext(rid(hasNumberOfConcurrentConnection,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(oid(emailClientConfigX,cdda),
+	rid(hasNumberOfConcurrentConnection,cdda),
+	cid('2',cdda)).
+	
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasServerSetting,cdda),
+	oid('settings->email->server',cdda)).
+	
+isa_ext(cid(serverConfig,cdda),cid(allAtoms,cdfpt)).
+
+isa_ext(rid(hasServerConfig,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(oid(emailClientConfigX,cdda),rid(hasServerConfig,cdda),
+	oid('/home/appdata/email',cdda)).
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+**
+** Defining the customer entity in ERD 
+**
+*/
+				
+isa_ext(cid(personX,cdda),cid(person,cdda)).
+	isa_ext(oid(customerX,cdda),cid(customer,cdda)).
+	isa_ext(oid(customerX,cdda),cid(personX,cdda)).
+
+		
+
+/*
+**
+** Defining the name of a person including three parts according to ERD
+**
+*/
+
+isa_ext(oid(nameIDX,cdda),cid(nameID,cdda)).
+
+hasAttr_ext(oid(nameIDX,cdda),rid(hasFirstName,cdda),cid('reza',cdda)).
+allAttr_ext(oid(nameIDX,cdda),rid(hasMiddleName,cdda),cid(' ',cdda)).
+hasAttr_ext(oid(nameIDX,cdda),rid(hasLastName,cdda),cid('basseda',cdda)).
+
+
+hasAttr_ext(oid(personX,cdda),rid(hasNameID,cdda),
+	oid(nameIDX,cdda)).
+	
+/*
+**
+** Defining the address of a person including two parts of ZIP and country 
+** according to ERD
+**
+*/
+
+isa_ext(oid(addressX,cdda),cid(address,cdda)).
+
+hasAttr_ext(oid(addressX,cdda),rid(hasZIP,cdda),cid('11794',cdda)).
+hasAttr_ext(oid(addressX,cdda),rid(hasCountry,cdda),cid('US',cdda)).
+
+hasAttr_ext(oid(personX,cdda),rid(hasAddress,cdda),
+	oid(addressX,cdda)).
+	
+	
+/*
+**
+** Defining other attributes of customer based on the ERD
+**
+*/
+
+
+hasAttr_ext(oid(customerX,cdda),rid(hasEmailContact,cdda),
+	oid('r.basseda@gmail.com',cdda)).
+	
+hasAttr_ext(oid(customerX,cdda),rid(hasPhoneContact,cdda),
+	oid('631-880-8721',cdda)).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+**
+** Defining the data_plan of a person including two parts of ZIP and country 
+** according to ERD
+**
+*/
+
+isa_ext(oid(dataPlanX,cdda),cid(dataPlan,cdda)).
+	
+/*
+**
+** Defining the login information entity for the data plan account 
+**
+*/
+
+isa_ext(oid(loginInfoY,cdda),cid(loginInfo,cdda)).
+
+hasAttr_ext(oid(loginInfoY,cdda),rid(hasLoginIdAttr,cdda),
+	oid('6318808721',cdda)).
+hasAttr_ext(oid(loginInfoY,cdda),rid(hasPasswordAttr,cdda),
+	oid('123456',cdda)).
+
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasLoginInfo,cdda),
+	oid(loginInfoY,cdda)).
+	
+/*
+**
+** Defining the phone number which includes local code, state code, and country
+** code.
+**
+*/
+
+isa_ext(oid(phoneNumberX,cdda),cid(phoneNumber,cdda)).
+
+hasAttr_ext(oid(phoneNumberX,cdda),rid(hasLocalCodeAttr,cdda),
+	oid('8808721',cdda)).
+hasAttr_ext(oid(phoneNumberX,cdda),rid(hasStateCodeAttr,cdda),
+	oid('631',cdda)).
+hasAttr_ext(oid(phoneNumberX,cdda),rid(hasCountryCodeAttr,cdda),
+	oid('1',cdda)).
+
+isa_ext(rid(hasPhoneNumber,cdda),cid('CDF Relations',cdf)).
+
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasPhoneNumber,cdda),
+	oid(phoneNumberX,cdda)).
+	
+/*
+**
+** Other attributes of dataPlan
+**
+*/
+
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasInternationalRoamingFlag,cdda),
+	oid('1',cdda)).
+	
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasActivatedFlag,cdda),
+	oid('1',cdda)).
+	
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasCallMinutesLeft,cdda),
+	oid('265',cdda)).
+	
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasDataAmountLeft,cdda),
+	oid('15',cdda)).
+	
+/*
+**
+** Defining the charge which includes call, text, and data charges.
+**
+*/
+
+isa_ext(oid(totalChargeX,cdda),cid('CDF Classes',cdf)).
+
+hasAttr_ext(oid(totalChargeX,cdda),rid(hasCallChargeAttr,cdda),
+	oid('43',cdda)).
+hasAttr_ext(oid(totalChargeX,cdda),rid(hasTextChargeAttr,cdda),
+	oid('34',cdda)).
+hasAttr_ext(oid(totalChargeX,cdda),rid(hasDataChargeAttr,cdda),
+	oid('65',cdda)).
+
+hasAttr_ext(oid(dataPlanX,cdda),rid(hasTotalCharge,cdda),
+	oid(totalChargeX,cdda)).
+	
+/*
+**
+** Defining the userID of a person including two parts for two classes of person
+** and data_plan according to ERD. Product class cust_plan combines the class of
+** dataPlan with customer.
+**
+*/
+
+isa_ext(oid(cust_plan(oid(customerX,cdda),oid(dataPlanX,cdda)),cdda),
+	cid(cust_plan(cid(customer,cdda),cid(dataPlan,cdda)),cdda)).
+
+hasAttr_ext(oid(cust_plan(oid(customerX,cdda),oid(dataPlanX,cdda)),cdda),
+	rid(hasCustomerLogin,cdda),oid(loginInfoY,cdda)).

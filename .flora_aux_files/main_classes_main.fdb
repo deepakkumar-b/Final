@@ -1,0 +1,531 @@
+/************************************************************************
+  file: includes/flrheader.flh
+
+  Author(s): Guizhen Yang
+	     Michael Kifer
+
+  Copyright (C) by
+       The Research Foundation of the State University of New York, 1999-2013.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+
+  This file is automatically included by the FLORA-2 compiler.
+************************************************************************/
+
+
+/************************************************************************
+  Note: This file should contain Macros only!
+
+  If FLORA_DUMP is defined: preprocessing for user-friendly output.
+
+  If any of these macros are changed, the corresponding wrappers in
+  flrwrapper.P must also be changed
+************************************************************************/
+
+
+
+
+/* File:      flora_prefix.flh -- FLORA-2 prefixes
+**
+** Author(s): Michael Kifer
+**	      Guizhen Yang
+**
+** Contact:   flora-users@lists.sourceforge.net
+**
+** Copyright (C) by
+**      The Research Foundation of the State University of New York, 1999-2013;
+**      and Vulcan, Inc., 2008-2013.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**      http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+**
+**
+*/
+
+
+/******************************************************************************
+  Flora prefix
+
+  All Flora symbols begin with this prefix.
+******************************************************************************/
+/* for F-logic and HiLog predicates */
+
+
+
+/******************************************************************************
+  Attaching FLORA_PREFIX
+
+  The argument to this Macro should be quoted.
+******************************************************************************/
+
+
+
+/******************************************************************************
+  Strings following FLORA_PREFIX
+
+  These strings should be quoted.
+******************************************************************************/
+/* Keep "mod" in the name of a formula wrapper right after FLORA_PREFIX
+   We rely on this to identify meta wrappers */
+
+
+
+/*  Trie for keeping skeletons of defined facts -- debugging */
+
+
+/*  Trie for storing used symbols names */
+
+
+
+
+/******************************************************************************
+  Module and trie prefixes
+******************************************************************************/
+/* prefix to construct Flora module predicates. */
+
+
+/*  prefix to name Flora storage trie for a module. */
+
+
+
+/* prefix to name Flora fld storage trie for a module. */
+
+
+/* prefix to name Flora fls storage trie for a module. */
+
+
+
+/****************************************************************************
+  F-logic atom prefixes for predicates that are used to distinguish F-logic
+  wrappers in the trailers, the user program, base facts, etc.
+****************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************************************
+  Lengths of prefixes of F-logic wrappers
+******************************************************************************/
+
+
+
+/****************************************************************************
+  Prefixes that are used for F-logic wrappers in rule bodies of user programs.
+  They are called "debuggin prefixes" because they were introduced to help
+  implement the debugging feature that catches undefined methods.
+  Note:
+     naf^, dyna^, dynz^ are the outermost prefixes
+     neg^ is the next outermost
+****************************************************************************/
+
+
+
+
+
+
+
+
+/* Prefixes used for checking undefinedness */
+
+
+
+/* Corresponding 1-arg macros */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******* these are used in inheritance closure axioms *******/
+
+
+
+
+
+
+
+
+
+/******* these are for transactions in LIBMOD *******/
+
+
+
+
+
+
+
+/******************************************************************************
+  Lengths of prefixes that are used in the wrappers to the left of module name
+
+  Note: We need to remember that these prefixes are enclosed in quotes.
+        But we need the actual atom length that Prolog uses. So, we deduct 2.
+******************************************************************************/
+
+
+
+/* length of FLORA_PREFIX'FLORA_MODULE_TAG */
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% support for undefinedness checks
+
+
+%% used for generating new oids statically
+%% We had previously #1'FLORA_COMPILATION_ID', but this caused gpp error in
+%% _dump(file). Apparently a gpp bug. So changed to X'FLORA_COMPILATION_ID'
+
+
+
+
+
+
+
+
+
+
+
+
+'_$_$_flora''mod''main''sub'(cellPhone,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(smartPhone,cellPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(samGalaxy,smartPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(samGalaxyS2,samGalaxy,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(samGalaxyS3,samGalaxy,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone,smartPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone3G,iPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone3GS,iPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone4G,iPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone4GS,iPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iPhone5G,iPhone,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(cellOperatingSystem,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(android,cellOperatingSystem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(iOS,cellOperatingSystem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(cellVendor,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(cellVersion,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(cellIMEINo,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastUpdateDate,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastUpdateTime,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(connection,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(wifiConnection,connection,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(cellularConnection,connection,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(connectionSpeed,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(connectionFlag,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(connectionName,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(company,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(carrierCo,company,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(homeCountry,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(range,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(frequency,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(application,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(emailClient,application,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(defaultEmailClient,emailClient,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(gmailApp,emailClient,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(yahooMApp,emailClient,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(carrierClientApplication,application,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(attClientApp,carrierClientApplication,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(verizonClientApp,carrierClientApplication,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(tmobileClientApp,carrierClientApplication,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(sprintClientApp,carrierClientApplication,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastTimeUsed,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastDateUsed,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(initTime,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(initDate,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(periveledgeLevel,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastTimeConnected,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastDateConnected,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(applicationConfig,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(emailClientConfig,applicationConfig,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(isConfigFlag,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(portNo,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(incomingPort,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(outgoingPort,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(serviceProvider,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(serviceType,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(domainName,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(exchangeServer,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(numberOfConcurrentConnection,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(serverSetting,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(serverConfig,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(person,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(customer,person,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(nameID,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(firstName,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(middleName,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(lastName,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(address,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(zip,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(country,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(emailContact,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(phoneContact,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(dataPlan,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(loginInfo,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(loginId,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(password,allAtoms,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(phoneNumber,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(phoneLocalCode,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(phoneStateCode,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(phoneCountryCode,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(internationalRoamingFlag,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(activatedFlag,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(callMinutesLeft,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(dataAmountLeft,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(totalCharge,'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(callCharge,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(textCharge,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(dataCharge,allIntegers,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''sub'(flapply(cust_plan,customer,dataPlan),'CDF Classes','_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasOS,cellOperatingSystem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasOS,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasVendor,cellVendor,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasVendor,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasVersion,cellVersion,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasVersion,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasIMEINo,cellIMEINo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasIMEINo,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasLastUpdateDate,lastUpdateDate,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasLastUpdateDate,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasLastUpdateTime,lastUpdateTime,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasLastUpdateTime,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(connection,hasConnectionFlag,connectionFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(connection,hasConnectionFlag,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(wifiConnection,hasConnectionName,connectionName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(wifiConnection,hasConnectionName,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasHomeCountry,homeCountry,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasHomeCountry,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasRange,range,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasRange,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasFrequency,frequency,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasFrequency,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasLastTimeUsed,lastTimeUsed,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasLastTimeUsed,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasLastDateUsed,lastDateUsed,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasLastDateUsed,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasInitTime,initTime,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasInitTime,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasInitDate,initDate,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasInitDate,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasPeriveledgeLevel,periveledgeLevel,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasPeriveledgeLevel,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasLastTimeConnected,lastTimeConnected,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasLastTimeConnected,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasLastDateConnected,lastDateConnected,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasLastDateConnected,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(applicationConfig,hasConfigFlag,isConfigFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(applicationConfig,hasConfigFlag,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasEmailClientConfi,emailClientConfig,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasEmailClientConfi,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(portNo,hasIncomingPort,incomingPort,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(portNo,hasIncomingPort,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(portNo,hasOutgoingPort,outgoingPort,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(portNo,hasOutgoingPort,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasPortConfig,portNo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasPortConfig,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasEmailLogin,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasEmailLogin,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServiceProvider,serviceProvider,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServiceProvider,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasDomainName,domainName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasDomainName,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasExchangeServer,exchangeServer,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasExchangeServer,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasNumberOfConcurrentConnection,numberOfConcurrentConnection,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasNumberOfConcurrentConnection,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServerSetting,serverSetting,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServerSetting,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServerConfig,serverConfig,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServerConfig,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(nameID,hasFirstName,firstName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(nameID,hasFirstName,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(nameID,hasLastName,lastName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(nameID,hasLastName,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(person,hasNameID,nameID,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(person,hasNameID,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(address,hasZIP,zip,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(address,hasZIP,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(address,hasCountry,country,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(address,hasCountry,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(person,hasAddress,address,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(person,hasAddress,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(customer,hasEmailContact,emailContact,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(customer,hasEmailContact,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(customer,hasPhoneContact,phoneContact,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(customer,hasPhoneContact,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(loginInfo,hasLoginIdAttr,loginId,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(loginInfo,hasLoginIdAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(loginInfo,hasPasswordAttr,password,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(loginInfo,hasPasswordAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasLoginInfo,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasLoginInfo,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(phoneNumber,hasLocalCodeAttr,phoneLocalCode,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(phoneNumber,hasLocalCodeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(phoneNumber,hasStateCodeAttr,phoneStateCode,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(phoneNumber,hasStateCodeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(phoneNumber,hasCountryCodeAttr,phoneCountryCode,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(phoneNumber,hasCountryCodeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasPhoneNumber,phoneNumber,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasPhoneNumber,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasInternationalRoamingFlag,internationalRoamingFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasInternationalRoamingFlag,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasActivatedFlag,activatedFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasActivatedFlag,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasCallMinutesLeft,callMinutesLeft,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasCallMinutesLeft,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasDataAmountLeft,dataAmountLeft,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasDataAmountLeft,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(totalCharge,hasCallChargeAttr,callCharge,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(totalCharge,hasCallChargeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(totalCharge,hasTextChargeAttr,textCharge,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(totalCharge,hasTextChargeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(totalCharge,hasDataChargeAttr,dataCharge,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(totalCharge,hasDataChargeAttr,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasTotalCharge,totalCharge,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasTotalCharge,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(flapply(cust_plan,customer,dataPlan),hasCustomerLogin,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(flapply(cust_plan,customer,dataPlan),hasCustomerLogin,0,*,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasOS,cellOperatingSystem,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasOS,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasVendor,cellVendor,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasVendor,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasVersion,cellVersion,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasVersion,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(smartPhone,hasIMEINo,cellIMEINo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(smartPhone,hasIMEINo,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasLastUpdateDate,lastUpdateDate,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasLastUpdateDate,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(cellOperatingSystem,hasLastUpdateTime,lastUpdateTime,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(cellOperatingSystem,hasLastUpdateTime,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(connection,hasConnectionFlag,connectionFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(connection,hasConnectionFlag,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(wifiConnection,hasConnectionName,connectionName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(wifiConnection,hasConnectionName,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasHomeCountry,homeCountry,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasHomeCountry,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasRange,range,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasRange,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(carrierCo,hasFrequency,frequency,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(carrierCo,hasFrequency,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasLastTimeUsed,lastTimeUsed,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasLastTimeUsed,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasLastDateUsed,lastDateUsed,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasLastDateUsed,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasInitTime,initTime,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasInitTime,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasInitDate,initDate,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasInitDate,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(application,hasPeriveledgeLevel,periveledgeLevel,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(application,hasPeriveledgeLevel,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasLastTimeConnected,lastTimeConnected,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasLastTimeConnected,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasLastDateConnected,lastDateConnected,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasLastDateConnected,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(applicationConfig,hasConfigFlag,isConfigFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(applicationConfig,hasConfigFlag,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClient,hasEmailClientConfi,emailClientConfig,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClient,hasEmailClientConfi,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(portNo,hasIncomingPort,incomingPort,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(portNo,hasIncomingPort,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(portNo,hasOutgoingPort,outgoingPort,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(portNo,hasOutgoingPort,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasPortConfig,portNo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasPortConfig,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasEmailLogin,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasEmailLogin,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServiceProvider,serviceProvider,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServiceProvider,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasDomainName,domainName,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasDomainName,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasExchangeServer,exchangeServer,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasExchangeServer,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasNumberOfConcurrentConnection,numberOfConcurrentConnection,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasNumberOfConcurrentConnection,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServerSetting,serverSetting,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServerSetting,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(emailClientConfig,hasServerConfig,serverConfig,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(emailClientConfig,hasServerConfig,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(person,hasNameID,nameID,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(person,hasNameID,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(person,hasAddress,address,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(person,hasAddress,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(customer,hasEmailContact,emailContact,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(customer,hasEmailContact,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(customer,hasPhoneContact,phoneContact,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(customer,hasPhoneContact,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasLoginInfo,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasLoginInfo,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasInternationalRoamingFlag,internationalRoamingFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasInternationalRoamingFlag,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasActivatedFlag,activatedFlag,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasActivatedFlag,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasCallMinutesLeft,callMinutesLeft,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasCallMinutesLeft,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasDataAmountLeft,dataAmountLeft,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasDataAmountLeft,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(dataPlan,hasTotalCharge,totalCharge,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(dataPlan,hasTotalCharge,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
+'_$_$_flora''mod''main''imvdsig'(flapply(cust_plan,customer,dataPlan),hasCustomerLogin,loginInfo,'_$ctxt'(_CallerModuleVar,__newcontextvar1,__newcontextvar2)).
+'_$_$_flora''mod''main''imvdcondef'(flapply(cust_plan,customer,dataPlan),hasCustomerLogin,1,1,'_$ctxt'(_CallerModuleVar,__newcontextvar3,__newcontextvar4)).
